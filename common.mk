@@ -51,15 +51,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_system=true
 
 PRODUCT_PACKAGES += \
-    otapreopt_script \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
-# The following modules are included in debuggable builds only.
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl \
-    update_engine_client
+    otapreopt_script
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
@@ -121,8 +113,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     camera.device@3.2-impl \
     libbson.vendor \
-    libxml2 \
-    Snap
+    libxml2
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -165,7 +156,6 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FM2 \
     libqcomfm_jni \
     init.qti.fm.sh \
     qcom.fmradio
@@ -203,10 +193,6 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0-java
-
-# IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common
 
 # Init
 PRODUCT_PACKAGES += \
@@ -252,10 +238,6 @@ PRODUCT_COPY_FILES += \
 # LED packages
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.msm8953
-
-# LineageActions
-PRODUCT_PACKAGES += \
-    LineageActions
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
@@ -395,13 +377,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libqsap_shim
 
-# Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
@@ -423,9 +398,6 @@ PRODUCT_PACKAGES += \
 # Trust HAL
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
-
-# Update engine
-PRODUCT_PACKAGES += brillo_update_payload
 
 # USB
 PRODUCT_PACKAGES += \
@@ -462,23 +434,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
-    dhcpcd.conf \
-    hostapd \
-    hostapd_cli \
-    libnl_2 \
-    libnl \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
-    libwifi-hal-qcom \
-    libwpa_client \
-    wcnss_service \
-    wificond \
-    wifilogd \
-    wpa_supplicant \
-    wpa_supplicant.conf \
-    wpa_supplicant_wcn.conf
-
-# Wi-Fi Display
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+    android.hardware.wifi@1.0-service
